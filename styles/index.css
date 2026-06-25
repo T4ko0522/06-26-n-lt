@@ -1,0 +1,300 @@
+@font-face {
+  font-family: 'UDEV Gothic';
+  src: url('/fonts/UDEVGothic-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'UDEV Gothic';
+  src: url('/fonts/UDEVGothic-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --c-bg: #fafafa;
+  --c-bg-soft: #ffffff;
+  --c-surface: #ffffff;
+  --c-border: #e7e5e4;
+  --c-border-strong: #d6d3d1;
+  --c-text: #0a0a0a;
+  --c-text-dim: #52525b;
+  --c-text-mute: #a1a1aa;
+  --c-accent: #ea580c;
+  --c-accent-soft: rgba(234, 88, 12, 0.08);
+  --c-accent-2: #1d4ed8;
+  --c-code-bg: #f7f6f3;
+  --c-code-text: #1c1917;
+}
+
+html,
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+
+/* ─── Base Layout ─── */
+#slide-content {
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(234, 88, 12, 0.045), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(29, 78, 216, 0.035), transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, var(--c-bg) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+#slideshow {
+  position: relative;
+  z-index: 1;
+}
+
+.slidev-page {
+  background: transparent !important;
+  color: var(--c-text);
+}
+
+.slidev-layout {
+  font-family: 'UDEV Gothic', 'SF Mono', 'Fira Code', monospace !important;
+  color: var(--c-text);
+  background: transparent !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  letter-spacing: 0;
+  position: relative;
+  z-index: 1;
+  padding: 3rem 4rem !important;
+}
+
+.cover {
+  position: relative;
+  z-index: 1;
+}
+
+.cover > .self-center {
+  width: 100%;
+  max-width: 52rem;
+}
+
+.cover h1 + p {
+  max-width: 52rem;
+}
+
+/* ─── Typography ─── */
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout h4,
+.slidev-layout p,
+.slidev-layout li,
+.slidev-layout span,
+.slidev-layout strong,
+.slidev-layout em,
+.slidev-layout div {
+  font-family: 'UDEV Gothic', 'SF Mono', 'Fira Code', monospace !important;
+}
+
+.slidev-layout h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--c-text) !important;
+}
+
+.slidev-layout h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--c-text) !important;
+}
+
+.slidev-layout strong {
+  color: var(--c-text) !important;
+  font-weight: 700;
+}
+
+.slidev-layout p {
+  color: var(--c-text-dim) !important;
+  line-height: 1.7;
+}
+
+.slidev-layout ul,
+.slidev-layout ol {
+  padding-left: 1.1rem;
+}
+
+.slidev-layout li {
+  color: var(--c-text-dim) !important;
+  line-height: 1.8;
+}
+
+.slidev-layout li strong {
+  color: var(--c-text) !important;
+}
+
+.slidev-layout ul li::marker {
+  color: var(--c-text-mute);
+}
+
+.slidev-layout blockquote {
+  border-left: 2px solid var(--c-accent);
+  padding-left: 1rem;
+  font-style: normal;
+  margin-top: 1.25rem;
+}
+
+.slidev-layout blockquote p {
+  color: var(--c-text) !important;
+  font-weight: 500;
+}
+
+.slidev-layout a {
+  color: var(--c-accent-2) !important;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+/* ─── Inline code ─── */
+.slidev-layout :not(pre) > code {
+  background: var(--c-accent-soft) !important;
+  color: var(--c-accent) !important;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.86em;
+  font-weight: 500;
+  font-family: 'UDEV Gothic', 'SF Mono', monospace !important;
+}
+
+/* ─── Code blocks (Shiki) ─── */
+.slidev-layout pre,
+.slidev-layout pre.shiki,
+.slidev-layout .slidev-code,
+.slidev-layout .slidev-code-wrapper {
+  background: var(--c-code-bg) !important;
+  color: var(--c-code-text) !important;
+  border: 1px solid var(--c-border) !important;
+  border-radius: 10px !important;
+  padding: 1rem 1.25rem !important;
+  font-size: 0.78em !important;
+  line-height: 1.6 !important;
+  overflow-x: auto;
+}
+
+.slidev-layout pre code,
+.slidev-layout .slidev-code code,
+.slidev-layout .shiki code {
+  background: transparent !important;
+  color: var(--c-code-text) !important;
+  font-family: 'UDEV Gothic', 'SF Mono', monospace !important;
+  padding: 0 !important;
+}
+
+/* Shiki が span に直接 color スタイルを付けるため、暗い前景色を上書き */
+.slidev-layout pre span,
+.slidev-layout .shiki span {
+  color: var(--c-code-text) !important;
+}
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--c-accent), #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, var(--c-accent-2), #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent !important;
+}
+
+/* ─── Card ─── */
+.glass-card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--c-border-strong);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Tags ─── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--c-border);
+  background: var(--c-bg-soft);
+  color: var(--c-text-dim) !important;
+}
+
+/* ─── Divider ─── */
+.divider {
+  height: 1px;
+  background: var(--c-border);
+  margin: 1.5rem 0;
+  border: none;
+}
+
+/* ─── Logo Badge ─── */
+.logo-badge {
+  display: inline-flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  background: var(--c-bg-soft);
+  border: 1px solid var(--c-border);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-bottom: 1.25rem;
+}
+
+.logo-badge > * {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+/* ─── Section Label ─── */
+.section-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--c-text-mute) !important;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 500;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--c-border);
+}
+
+/* ─── Smooth transitions for v-click ─── */
+.slidev-vclick-target {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.slidev-vclick-hidden {
+  opacity: 0 !important;
+  transform: translateY(8px);
+}
