@@ -156,6 +156,34 @@ body {
   border-bottom: 1px solid currentColor;
 }
 
+/* ─── Annotation Note ─── */
+.annotation-note {
+  display: inline-block;
+  max-width: 48rem;
+  margin: 0.4rem 0 0.75rem;
+  padding: 0.45rem 0.7rem;
+  border-left: 2px solid var(--c-border-strong);
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--c-text-dim) !important;
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+.annotation-code {
+  color: var(--c-accent) !important;
+  font-weight: 500;
+}
+
+/* ─── Nix-blue inline code (per-slide override) ─── */
+.slidev-layout.nix-blue :not(pre) > code {
+  background: rgba(82, 119, 195, 0.12) !important;
+  color: #2d4fa8 !important;
+}
+
+.slidev-layout.nix-blue .annotation-code {
+  color: #2d4fa8 !important;
+}
+
 /* ─── Inline code ─── */
 .slidev-layout :not(pre) > code {
   background: var(--c-accent-soft) !important;
@@ -250,23 +278,115 @@ body {
   border: none;
 }
 
-/* ─── Logo Badge ─── */
-.logo-badge {
-  display: inline-flex;
-  width: 64px;
-  height: 64px;
-  align-items: center;
-  justify-content: center;
-  background: var(--c-bg-soft);
-  border: 1px solid var(--c-border);
-  border-radius: 14px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
-  margin-bottom: 1.25rem;
+/* ─── Right-side decorative code background ─── */
+.slidev-layout.with-code-bg {
+  padding-right: 44% !important;
 }
 
-.logo-badge > * {
-  width: 36px !important;
+.slidev-layout pre.code-bg-pre {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  margin: 0 !important;
+  padding: 2.5rem 2rem 2.5rem 0.5rem !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-size: 0.7rem !important;
+  line-height: 1.55 !important;
+  color: rgba(45, 79, 168, 0.85) !important;
+  font-weight: 500;
+  white-space: pre;
+  font-family: 'UDEV Gothic', 'SF Mono', monospace !important;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 96%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 96%, transparent 100%);
+}
+
+.slidev-layout.with-code-bg > *:not(.code-bg-pre) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Mermaid container: スライド高さに収まるよう自動スケール ─── */
+.mermaid-fit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.mermaid-fit .slidev-vclick-target,
+.mermaid-fit > div {
+  width: 100%;
+}
+
+.mermaid-fit svg {
+  max-width: 100%;
+  max-height: 56vh;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* スライド全体の mermaid 自動収め (両ページ共通の安全装置) */
+.slidev-layout .mermaid svg,
+.slidev-layout svg[id^="mermaid"] {
+  max-height: 60vh;
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* ─── Title page: "Nix" portion in Nix-blue ─── */
+.nix-blue-text {
+  background: linear-gradient(135deg, #5277C3, #2d4fa8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent !important;
+  font-weight: 700;
+}
+
+/* ─── Title page logo row (Nix × Cloudflare) ─── */
+.title-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.title-logos img {
+  display: block;
+  height: 44px !important;
+  width: auto !important;
+  max-width: none !important;
+  object-fit: contain;
+}
+
+.title-logos-x {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--c-text-mute) !important;
+  letter-spacing: 0;
+}
+
+/* ─── Brand Logo (枠なし・アスペクト比保持) ─── */
+.brand-logo {
+  display: block;
   height: 36px !important;
+  width: auto !important;
+  max-width: none !important;
+  margin-bottom: 1.25rem;
+  object-fit: contain;
+}
+
+.brand-logo.is-lg {
+  height: 72px !important;
+  margin-bottom: 1.5rem;
 }
 
 /* ─── Section Label ─── */
