@@ -414,6 +414,111 @@ body {
   background: var(--c-border);
 }
 
+/* ─── Whoami / profile slide ─── */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 1.25rem;
+}
+
+.profile-info h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.profile-handle {
+  color: var(--c-text-mute) !important;
+  font-weight: 400;
+  font-size: 0.95rem;
+  margin-left: 0.35rem;
+}
+
+.profile-info ul {
+  margin: 0;
+}
+
+.profile-info li {
+  margin-bottom: 0.45rem;
+}
+
+.profile-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-top: 1.4rem;
+  color: var(--c-text-dim);
+  font-size: 0.78rem;
+}
+
+.profile-socials span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.profile-socials img {
+  height: 0.9rem;
+  width: auto;
+  border-radius: 2px;
+}
+
+.profile-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.profile-project-img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  border: 1px solid var(--c-border);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  object-fit: contain;
+}
+
+.tech-nix {
+  color: #5277C3 !important;
+  font-weight: 600;
+}
+
+.tech-ts {
+  color: #3178C6 !important;
+  font-weight: 600;
+}
+
+.tech-ps {
+  color: #2671BE !important;
+  font-weight: 600;
+}
+
+.tech-nvim {
+  color: #57A143 !important;
+  font-weight: 600;
+}
+
+.profile-avatar-img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1px solid var(--c-border);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+  object-fit: cover;
+  background: var(--c-bg-soft);
+}
+
+.profile-project-label {
+  color: var(--c-text-mute) !important;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 /* ─── Smooth transitions for v-click ─── */
 .slidev-vclick-target {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;

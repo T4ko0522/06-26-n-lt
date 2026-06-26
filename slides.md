@@ -38,6 +38,43 @@ Cloudflare-native な Binary Cache 基盤
 
 ---
 
+<div class="section-label">Whoami — 自己紹介</div>
+
+<div class="profile-grid">
+
+<div class="profile-info">
+
+## 権代 颯士 <span class="profile-handle">/ @t4ko0522</span>
+
+<div class="divider" style="margin: 0.8rem 0 1.25rem"></div>
+
+- **所属** — N 高等学校 通学プログラミングコース
+- **好きな技術** — <span class="tech-nix">Nix</span> / <span class="tech-ts">TypeScript</span> / <span class="tech-ps">PowerShell</span> / <span class="tech-nvim">NeoVim</span>
+
+<div class="profile-socials">
+  <span><img src="/x-logo.svg" alt="X" />@t4ko0522</span>
+  <span><img src="/github-logo.svg" alt="GitHub" />t4ko0522</span>
+  <span><img src="/website-icon.png" alt="Website" />t4ko.pet</span>
+</div>
+
+</div>
+
+<div class="profile-visual">
+  <img src="/icon.png" alt="t4ko" class="profile-avatar-img" />
+</div>
+
+</div>
+
+<!--
+簡単に自己紹介です。権代颯士、ハンドルは @t4ko0522 で、
+N 高等学校の通学プログラミングコース 3 年生です。
+好きな技術は Nix、TypeScript、Cloudflare、Bun あたり。
+個人で BetterTab というプロジェクトも作っています。
+それでは本題に入ります。
+-->
+
+---
+
 <div class="section-label">01 — アジェンダ</div>
 
 # 今日話すこと
