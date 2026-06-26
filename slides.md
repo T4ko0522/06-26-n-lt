@@ -11,6 +11,12 @@ lineNumbers: false
 themeConfig:
   default: light
 ---
+<!-- feedback
+全体のフォントサイズを大きくする。
+色付けをもっと細かくする
+スライドの文章を減らして完結にすることで情報を伝えやすくする
+台本を考える
+-->
 
 <div class="tag mb-6">2026/06/26 / LT</div>
 
